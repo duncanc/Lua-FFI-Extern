@@ -13,11 +13,10 @@ local gl = glfactory.create {
 }
 
 local function setsize(width, height)
-  screen = sdl.SDL_SetVideoMode(width, height, 0, bit.bor(sdl.SDL_OPENGL, sdl.SDL_RESIZABLE))
+  gl.glViewport(0, 0, width, height)
   if (height == 0) then
     height = 1
   end
-  print(width, height)
   gl.glViewport(0,0,width,height)
   
   local aspect = width/height
@@ -49,6 +48,7 @@ while not finished do
         finished = true
       end
     elseif (event.type == sdl.SDL_VIDEORESIZE) then
+      screen = sdl.SDL_SetVideoMode(event.resize.w, event.resize.h, 0, bit.bor(sdl.SDL_OPENGL, sdl.SDL_RESIZABLE))
       setsize(event.resize.w, event.resize.h)
     end
 	end
