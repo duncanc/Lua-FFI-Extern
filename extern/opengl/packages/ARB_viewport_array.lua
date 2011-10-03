@@ -1,0 +1,78 @@
+return {
+  basicTypes = {
+    GLuint = "unsigned int";
+    GLsizei = "int";
+    GLfloat = "float";
+    GLint = "int";
+    GLclampd = "double";
+    GLenum = "unsigned int";
+    GLdouble = "double";
+  };
+  typeAliases = {
+    UInt32 = "GLuint";
+    SizeI = "GLsizei";
+    Float32 = "GLfloat";
+    Int32 = "GLint";
+    ClampedFloat64 = "GLclampd";
+    Float64 = "GLdouble";
+  };
+  magicNumbers = {
+    SCISSOR_BOX = 0x0C10;
+    VIEWPORT = 0x0BA2;
+    DEPTH_RANGE = 0x0B70;
+    SCISSOR_TEST = 0x0C11;
+    MAX_VIEWPORTS = 0x825B;
+    VIEWPORT_SUBPIXEL_BITS = 0x825C;
+    VIEWPORT_BOUNDS_RANGE = 0x825D;
+    LAYER_PROVOKING_VERTEX = 0x825E;
+    VIEWPORT_INDEX_PROVOKING_VERTEX = 0x825F;
+    UNDEFINED_VERTEX = 0x8260;
+    FIRST_VERTEX_CONVENTION = 0x8E4D;
+    LAST_VERTEX_CONVENTION = 0x8E4E;
+    PROVOKING_VERTEX = 0x8E4F;
+  };
+  funcs = {
+    {'ViewportArrayv';
+      'UInt32', 'first';
+      'SizeI', 'count';
+      'const Float32*', 'v'};
+    {'ViewportIndexedf';
+      'UInt32', 'index';
+      'Float32', 'x';
+      'Float32', 'y';
+      'Float32', 'w';
+      'Float32', 'h'};
+    {'ViewportIndexedfv';
+      'UInt32', 'index';
+      'const Float32*', 'v'};
+    {'ScissorArrayv';
+      'UInt32', 'first';
+      'SizeI', 'count';
+      'const Int32*', 'v'};
+    {'ScissorIndexed';
+      'UInt32', 'index';
+      'Int32', 'left';
+      'Int32', 'bottom';
+      'SizeI', 'width';
+      'SizeI', 'height'};
+    {'ScissorIndexedv';
+      'UInt32', 'index';
+      'const Int32*', 'v'};
+    {'DepthRangeArrayv';
+      'UInt32', 'first';
+      'SizeI', 'count';
+      'const ClampedFloat64*', 'v'};
+    {'DepthRangeIndexed';
+      'UInt32', 'index';
+      'ClampedFloat64', 'n';
+      'ClampedFloat64', 'f'};
+    {'GetFloati_v';
+      'GLenum', 'target';
+      'UInt32', 'index';
+      'Float32*', 'data'};
+    {'GetDoublei_v';
+      'GLenum', 'target';
+      'UInt32', 'index';
+      'Float64*', 'data'};
+  };
+}

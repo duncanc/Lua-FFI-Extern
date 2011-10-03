@@ -1,0 +1,6 @@
+return {
+  magicNumbers = {
+    MIN_PROGRAM_TEXTURE_GATHER_OFFSET_ARB = 0x8E5E;
+    MAX_PROGRAM_TEXTURE_GATHER_OFFSET_ARB = 0x8E5F;
+  };
+}

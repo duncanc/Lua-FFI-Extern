@@ -1,0 +1,7 @@
+return {
+  magicNumbers = {
+    TEXTURE_LIGHTING_MODE_HP = 0x8167;
+    TEXTURE_POST_SPECULAR_HP = 0x8168;
+    TEXTURE_PRE_SPECULAR_HP = 0x8169;
+  };
+}

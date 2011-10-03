@@ -1,0 +1,7 @@
+return {
+  magicNumbers = {
+    VBO_FREE_MEMORY_ATI = 0x87FB;
+    TEXTURE_FREE_MEMORY_ATI = 0x87FC;
+    RENDERBUFFER_FREE_MEMORY_ATI = 0x87FD;
+  };
+}

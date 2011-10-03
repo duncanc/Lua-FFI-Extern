@@ -1,0 +1,37 @@
+return {
+  basicTypes = {
+    GLenum = "unsigned int";
+    GLint = "int";
+  };
+  typeAliases = {
+    HintTargetPGI = "GLenum";
+    Int32 = "GLint";
+  };
+  magicNumbers = {
+    PREFER_DOUBLEBUFFER_HINT_PGI = 0x1A1F8;
+    CONSERVE_MEMORY_HINT_PGI = 0x1A1FD;
+    RECLAIM_MEMORY_HINT_PGI = 0x1A1FE;
+    NATIVE_GRAPHICS_HANDLE_PGI = 0x1A202;
+    NATIVE_GRAPHICS_BEGIN_HINT_PGI = 0x1A203;
+    NATIVE_GRAPHICS_END_HINT_PGI = 0x1A204;
+    ALWAYS_FAST_HINT_PGI = 0x1A20C;
+    ALWAYS_SOFT_HINT_PGI = 0x1A20D;
+    ALLOW_DRAW_OBJ_HINT_PGI = 0x1A20E;
+    ALLOW_DRAW_WIN_HINT_PGI = 0x1A20F;
+    ALLOW_DRAW_FRG_HINT_PGI = 0x1A210;
+    ALLOW_DRAW_MEM_HINT_PGI = 0x1A211;
+    STRICT_DEPTHFUNC_HINT_PGI = 0x1A216;
+    STRICT_LIGHTING_HINT_PGI = 0x1A217;
+    STRICT_SCISSOR_HINT_PGI = 0x1A218;
+    FULL_STIPPLE_HINT_PGI = 0x1A219;
+    CLIP_NEAR_HINT_PGI = 0x1A220;
+    CLIP_FAR_HINT_PGI = 0x1A221;
+    WIDE_LINE_HINT_PGI = 0x1A222;
+    BACK_NORMALS_HINT_PGI = 0x1A223;
+  };
+  funcs = {
+    {'HintPGI';
+      'HintTargetPGI', 'target';
+      'Int32', 'mode'};
+  };
+}

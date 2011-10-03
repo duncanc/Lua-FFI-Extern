@@ -1,0 +1,61 @@
+return {
+  basicTypes = {
+    GLenum = "unsigned int";
+    GLuint = "unsigned int";
+    GLintptr = "ptrdiff_t";
+    GLsizeiptr = "ptrdiff_t";
+    GLsizei = "int";
+    GLchar = "char";
+    GLchar = "char";
+  };
+  magicNumbers = {
+    TRANSFORM_FEEDBACK_BUFFER_EXT = 0x8C8E;
+    TRANSFORM_FEEDBACK_BUFFER_START_EXT = 0x8C84;
+    TRANSFORM_FEEDBACK_BUFFER_SIZE_EXT = 0x8C85;
+    TRANSFORM_FEEDBACK_BUFFER_BINDING_EXT = 0x8C8F;
+    INTERLEAVED_ATTRIBS_EXT = 0x8C8C;
+    SEPARATE_ATTRIBS_EXT = 0x8C8D;
+    PRIMITIVES_GENERATED_EXT = 0x8C87;
+    TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_EXT = 0x8C88;
+    RASTERIZER_DISCARD_EXT = 0x8C89;
+    MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_EXT = 0x8C8A;
+    MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_EXT = 0x8C8B;
+    MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_EXT = 0x8C80;
+    TRANSFORM_FEEDBACK_VARYINGS_EXT = 0x8C83;
+    TRANSFORM_FEEDBACK_BUFFER_MODE_EXT = 0x8C7F;
+    TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH_EXT = 0x8C76;
+  };
+  funcs = {
+    {'BeginTransformFeedbackEXT';
+      'GLenum', 'primitiveMode'};
+    {'EndTransformFeedbackEXT'};
+    {'BindBufferRangeEXT';
+      'GLenum', 'target';
+      'UInt32', 'index';
+      'UInt32', 'buffer';
+      'BufferOffset', 'offset';
+      'BufferSize', 'size'};
+    {'BindBufferOffsetEXT';
+      'GLenum', 'target';
+      'UInt32', 'index';
+      'UInt32', 'buffer';
+      'BufferOffset', 'offset'};
+    {'BindBufferBaseEXT';
+      'GLenum', 'target';
+      'UInt32', 'index';
+      'UInt32', 'buffer'};
+    {'TransformFeedbackVaryingsEXT';
+      'UInt32', 'program';
+      'SizeI', 'count';
+      'const CharPointer*', 'varyings';
+      'GLenum', 'bufferMode'};
+    {'GetTransformFeedbackVaryingEXT';
+      'UInt32', 'program';
+      'UInt32', 'index';
+      'SizeI', 'bufSize';
+      'SizeI*', 'length';
+      'SizeI*', 'size';
+      'GLenum*', 'type';
+      'Char*', 'name'};
+  };
+}

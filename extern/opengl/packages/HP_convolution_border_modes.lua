@@ -1,0 +1,8 @@
+return {
+  magicNumbers = {
+    IGNORE_BORDER_HP = 0x8150;
+    CONSTANT_BORDER_HP = 0x8151;
+    REPLICATE_BORDER_HP = 0x8153;
+    CONVOLUTION_BORDER_COLOR_HP = 0x8154;
+  };
+}

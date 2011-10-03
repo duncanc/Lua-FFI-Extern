@@ -1,0 +1,62 @@
+return {
+  basicTypes = {
+    GLenum = "unsigned int";
+    GLboolean = "unsigned char";
+    GLuint = "unsigned int";
+    GLuint64EXT = "uint64_t";
+    GLint = "int";
+    GLsizei = "int";
+  };
+  magicNumbers = {
+    BUFFER_GPU_ADDRESS_NV = 0x8F1D;
+    GPU_ADDRESS_NV = 0x8F34;
+    MAX_SHADER_BUFFER_ADDRESS_NV = 0x8F35;
+  };
+  funcs = {
+    {'MakeBufferResidentNV';
+      'GLenum', 'target';
+      'GLenum', 'access'};
+    {'MakeBufferNonResidentNV';
+      'GLenum', 'target'};
+    {'IsBufferResidentNV', ret='Boolean';
+      'GLenum', 'target'};
+    {'MakeNamedBufferResidentNV';
+      'UInt32', 'buffer';
+      'GLenum', 'access'};
+    {'MakeNamedBufferNonResidentNV';
+      'UInt32', 'buffer'};
+    {'IsNamedBufferResidentNV', ret='Boolean';
+      'UInt32', 'buffer'};
+    {'GetBufferParameterui64vNV';
+      'GLenum', 'target';
+      'GLenum', 'pname';
+      'UInt64EXT*', 'params'};
+    {'GetNamedBufferParameterui64vNV';
+      'UInt32', 'buffer';
+      'GLenum', 'pname';
+      'UInt64EXT*', 'params'};
+    {'GetIntegerui64vNV';
+      'GLenum', 'value';
+      'UInt64EXT*', 'result'};
+    {'Uniformui64NV';
+      'Int32', 'location';
+      'UInt64EXT', 'value'};
+    {'Uniformui64vNV';
+      'Int32', 'location';
+      'SizeI', 'count';
+      'const UInt64EXT*', 'value'};
+    {'GetUniformui64vNV';
+      'UInt32', 'program';
+      'Int32', 'location';
+      'UInt64EXT*', 'params'};
+    {'ProgramUniformui64NV';
+      'UInt32', 'program';
+      'Int32', 'location';
+      'UInt64EXT', 'value'};
+    {'ProgramUniformui64vNV';
+      'UInt32', 'program';
+      'Int32', 'location';
+      'SizeI', 'count';
+      'const UInt64EXT*', 'value'};
+  };
+}

@@ -1,0 +1,8 @@
+return {
+  magicNumbers = {
+    FUNC_ADD_OES = 0x8006;
+    BLEND_EQUATION_OES = 0x8009;
+    FUNC_SUBTRACT_OES = 0x800A;
+    FUNC_REVERSE_SUBTRACT_OES = 0x800B;
+  };
+}

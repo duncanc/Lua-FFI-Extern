@@ -1,0 +1,68 @@
+return {
+  basicTypes = {
+    GLenum = "unsigned int";
+    GLsizei = "int";
+    GLint = "int";
+    GLboolean = "unsigned char";
+    GLuint = "unsigned int";
+  };
+  magicNumbers = {
+    TEXTURE_COVERAGE_SAMPLES_NV = 0x9045;
+    TEXTURE_COLOR_SAMPLES_NV = 0x9046;
+  };
+  funcs = {
+    {'TexImage2DMultisampleCoverageNV';
+      'GLenum', 'target';
+      'SizeI', 'coverageSamples';
+      'SizeI', 'colorSamples';
+      'Int32', 'internalFormat';
+      'SizeI', 'width';
+      'SizeI', 'height';
+      'Boolean', 'fixedSampleLocations'};
+    {'TexImage3DMultisampleCoverageNV';
+      'GLenum', 'target';
+      'SizeI', 'coverageSamples';
+      'SizeI', 'colorSamples';
+      'Int32', 'internalFormat';
+      'SizeI', 'width';
+      'SizeI', 'height';
+      'SizeI', 'depth';
+      'Boolean', 'fixedSampleLocations'};
+    {'TextureImage2DMultisampleNV';
+      'UInt32', 'texture';
+      'GLenum', 'target';
+      'SizeI', 'samples';
+      'Int32', 'internalFormat';
+      'SizeI', 'width';
+      'SizeI', 'height';
+      'Boolean', 'fixedSampleLocations'};
+    {'TextureImage3DMultisampleNV';
+      'UInt32', 'texture';
+      'GLenum', 'target';
+      'SizeI', 'samples';
+      'Int32', 'internalFormat';
+      'SizeI', 'width';
+      'SizeI', 'height';
+      'SizeI', 'depth';
+      'Boolean', 'fixedSampleLocations'};
+    {'TextureImage2DMultisampleCoverageNV';
+      'UInt32', 'texture';
+      'GLenum', 'target';
+      'SizeI', 'coverageSamples';
+      'SizeI', 'colorSamples';
+      'Int32', 'internalFormat';
+      'SizeI', 'width';
+      'SizeI', 'height';
+      'Boolean', 'fixedSampleLocations'};
+    {'TextureImage3DMultisampleCoverageNV';
+      'UInt32', 'texture';
+      'GLenum', 'target';
+      'SizeI', 'coverageSamples';
+      'SizeI', 'colorSamples';
+      'Int32', 'internalFormat';
+      'SizeI', 'width';
+      'SizeI', 'height';
+      'SizeI', 'depth';
+      'Boolean', 'fixedSampleLocations'};
+  };
+}

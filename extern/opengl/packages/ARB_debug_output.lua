@@ -1,0 +1,62 @@
+return {
+  basicTypes = {
+    GLenum = "unsigned int";
+    GLsizei = "int";
+    GLuint = "unsigned int";
+    GLboolean = "unsigned char";
+    GLchar = "char";
+    GLvoid = "void";
+  };
+  magicNumbers = {
+    DEBUG_OUTPUT_SYNCHRONOUS_ARB = 0x8242;
+    DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_ARB = 0x8243;
+    DEBUG_CALLBACK_FUNCTION_ARB = 0x8244;
+    DEBUG_CALLBACK_USER_PARAM_ARB = 0x8245;
+    DEBUG_SOURCE_API_ARB = 0x8246;
+    DEBUG_SOURCE_WINDOW_SYSTEM_ARB = 0x8247;
+    DEBUG_SOURCE_SHADER_COMPILER_ARB = 0x8248;
+    DEBUG_SOURCE_THIRD_PARTY_ARB = 0x8249;
+    DEBUG_SOURCE_APPLICATION_ARB = 0x824A;
+    DEBUG_SOURCE_OTHER_ARB = 0x824B;
+    DEBUG_TYPE_ERROR_ARB = 0x824C;
+    DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB = 0x824D;
+    DEBUG_TYPE_UNDEFINED_BEHAVIOR_ARB = 0x824E;
+    DEBUG_TYPE_PORTABILITY_ARB = 0x824F;
+    DEBUG_TYPE_PERFORMANCE_ARB = 0x8250;
+    DEBUG_TYPE_OTHER_ARB = 0x8251;
+    MAX_DEBUG_MESSAGE_LENGTH_ARB = 0x9143;
+    MAX_DEBUG_LOGGED_MESSAGES_ARB = 0x9144;
+    DEBUG_LOGGED_MESSAGES_ARB = 0x9145;
+    DEBUG_SEVERITY_HIGH_ARB = 0x9146;
+    DEBUG_SEVERITY_MEDIUM_ARB = 0x9147;
+    DEBUG_SEVERITY_LOW_ARB = 0x9148;
+  };
+  funcs = {
+    {'DebugMessageControlARB';
+      'GLenum', 'source';
+      'GLenum', 'type';
+      'GLenum', 'severity';
+      'SizeI', 'count';
+      'const UInt32*', 'ids';
+      'Boolean', 'enabled'};
+    {'DebugMessageInsertARB';
+      'GLenum', 'source';
+      'GLenum', 'type';
+      'UInt32', 'id';
+      'GLenum', 'severity';
+      'SizeI', 'length';
+      'const Char*', 'buf'};
+    {'DebugMessageCallbackARB';
+      'GLDEBUGPROCARB', 'callback';
+      'const Void*', 'userParam'};
+    {'GetDebugMessageLogARB', ret='UInt32';
+      'UInt32', 'count';
+      'SizeI', 'bufsize';
+      'GLenum*', 'sources';
+      'GLenum*', 'types';
+      'UInt32*', 'ids';
+      'GLenum*', 'severities';
+      'SizeI*', 'lengths';
+      'Char*', 'messageLog'};
+  };
+}

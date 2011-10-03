@@ -1,0 +1,7 @@
+return {
+  magicNumbers = {
+    R11F_G11F_B10F_EXT = 0x8C3A;
+    UNSIGNED_INT_10F_11F_11F_REV_EXT = 0x8C3B;
+    RGBA_SIGNED_COMPONENTS_EXT = 0x8C3C;
+  };
+}

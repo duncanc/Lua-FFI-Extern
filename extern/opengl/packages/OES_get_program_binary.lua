@@ -1,0 +1,7 @@
+return {
+  magicNumbers = {
+    PROGRAM_BINARY_LENGTH_OES = 0x8741;
+    NUM_PROGRAM_BINARY_FORMATS_OES = 0x87FE;
+    PROGRAM_BINARY_FORMATS_OES = 0x87FF;
+  };
+}

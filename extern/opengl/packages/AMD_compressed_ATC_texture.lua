@@ -1,0 +1,7 @@
+return {
+  magicNumbers = {
+    ATC_RGBA_INTERPOLATED_ALPHA_AMD = 0x87EE;
+    ATC_RGB_AMD = 0x8C92;
+    ATC_RGBA_EXPLICIT_ALPHA_AMD = 0x8C93;
+  };
+}

@@ -1,0 +1,45 @@
+return {
+  inherits = {
+    require 'extern.opengl.packages.VERSION_4_0';
+    require 'extern.opengl.packages.ARB_ES2_compatibility';
+    require 'extern.opengl.packages.ARB_get_program_binary';
+    require 'extern.opengl.packages.ARB_separate_shader_objects';
+    require 'extern.opengl.packages.ARB_vertex_attrib_64bit';
+    require 'extern.opengl.packages.ARB_viewport_array';
+  };
+  magicNumbers = {
+    FIXED = 0x140C;
+    IMPLEMENTATION_COLOR_READ_TYPE = 0x8B9A;
+    IMPLEMENTATION_COLOR_READ_FORMAT = 0x8B9B;
+    LOW_FLOAT = 0x8DF0;
+    MEDIUM_FLOAT = 0x8DF1;
+    HIGH_FLOAT = 0x8DF2;
+    LOW_INT = 0x8DF3;
+    MEDIUM_INT = 0x8DF4;
+    HIGH_INT = 0x8DF5;
+    SHADER_COMPILER = 0x8DFA;
+    NUM_SHADER_BINARY_FORMATS = 0x8DF9;
+    MAX_VERTEX_UNIFORM_VECTORS = 0x8DFB;
+    MAX_VARYING_VECTORS = 0x8DFC;
+    MAX_FRAGMENT_UNIFORM_VECTORS = 0x8DFD;
+    PROGRAM_BINARY_RETRIEVABLE_HINT = 0x8257;
+    PROGRAM_BINARY_LENGTH = 0x8741;
+    NUM_PROGRAM_BINARY_FORMATS = 0x87FE;
+    PROGRAM_BINARY_FORMATS = 0x87FF;
+    VERTEX_SHADER_BIT = 0x00000001;
+    FRAGMENT_SHADER_BIT = 0x00000002;
+    GEOMETRY_SHADER_BIT = 0x00000004;
+    TESS_CONTROL_SHADER_BIT = 0x00000008;
+    TESS_EVALUATION_SHADER_BIT = 0x00000010;
+    ALL_SHADER_BITS = 0xFFFFFFFF;
+    PROGRAM_SEPARABLE = 0x8258;
+    ACTIVE_PROGRAM = 0x8259;
+    PROGRAM_PIPELINE_BINDING = 0x825A;
+    MAX_VIEWPORTS = 0x825B;
+    VIEWPORT_SUBPIXEL_BITS = 0x825C;
+    VIEWPORT_BOUNDS_RANGE = 0x825D;
+    LAYER_PROVOKING_VERTEX = 0x825E;
+    VIEWPORT_INDEX_PROVOKING_VERTEX = 0x825F;
+    UNDEFINED_VERTEX = 0x8260;
+  };
+}

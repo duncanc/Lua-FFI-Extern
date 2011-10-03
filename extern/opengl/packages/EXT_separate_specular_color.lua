@@ -1,0 +1,7 @@
+return {
+  magicNumbers = {
+    LIGHT_MODEL_COLOR_CONTROL_EXT = 0x81F8;
+    SINGLE_COLOR_EXT = 0x81F9;
+    SEPARATE_SPECULAR_COLOR_EXT = 0x81FA;
+  };
+}

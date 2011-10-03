@@ -1,0 +1,73 @@
+return {
+  basicTypes = {
+    GLsizei = "int";
+    GLuint = "unsigned int";
+    GLboolean = "unsigned char";
+    GLenum = "unsigned int";
+    GLint = "int";
+    GLfloat = "float";
+  };
+  typeAliases = {
+    SizeI = "GLsizei";
+    UInt32 = "GLuint";
+    Boolean = "GLboolean";
+    Int32 = "GLint";
+    Float32 = "GLfloat";
+  };
+  magicNumbers = {
+    SAMPLER_BINDING = 0x8919;
+  };
+  funcs = {
+    {'GenSamplers';
+      'SizeI', 'count';
+      'UInt32*', 'samplers'};
+    {'DeleteSamplers';
+      'SizeI', 'count';
+      'const UInt32*', 'samplers'};
+    {'IsSampler', ret='Boolean';
+      'UInt32', 'sampler'};
+    {'BindSampler';
+      'UInt32', 'unit';
+      'UInt32', 'sampler'};
+    {'SamplerParameteri';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'Int32', 'param'};
+    {'SamplerParameteriv';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'const Int32*', 'param'};
+    {'SamplerParameterf';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'Float32', 'param'};
+    {'SamplerParameterfv';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'const Float32*', 'param'};
+    {'SamplerParameterIiv';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'const Int32*', 'param'};
+    {'SamplerParameterIuiv';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'const UInt32*', 'param'};
+    {'GetSamplerParameteriv';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'Int32*', 'params'};
+    {'GetSamplerParameterIiv';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'Int32*', 'params'};
+    {'GetSamplerParameterfv';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'Float32*', 'params'};
+    {'GetSamplerParameterIuiv';
+      'UInt32', 'sampler';
+      'GLenum', 'pname';
+      'UInt32*', 'params'};
+  };
+}
