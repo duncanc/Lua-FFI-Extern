@@ -157,4 +157,9 @@ ffi.cdef [[
 
 ]]
 
-return ffi.load 'zlib1'
+if ffi.os == 'Windows' then
+  return ffi.load 'ZLIB1'
+else
+  return ffi.load 'z'
+end
+
