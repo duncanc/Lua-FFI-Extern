@@ -90,7 +90,7 @@ do
 			return ffi.cast(table.concat(sigBuf), func)
 		else
 			if ffi.os == 'Windows' then
-				local opengl32 = require 'extern.microsoftwindows.opengl32'
+				local opengl32 = require 'extern.mswindows.opengl32'
 				getProcAddress = opengl32.wglGetProcAddress
 			end
 			local library = getLibrary()
