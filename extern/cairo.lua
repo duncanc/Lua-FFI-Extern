@@ -355,6 +355,7 @@ ffi.cdef [[
   void cairo_get_dash(cairo_t*, double *dashes, double *offset);
   void cairo_set_fill_rule(cairo_t*, cairo_fill_rule_t);
   cairo_fill_rule_t cairo_get_fill_rule(cairo_t*);
+  void cairo_set_line_cap(cairo_t*, cairo_line_cap_t);
   cairo_line_cap_t cairo_get_line_cap(cairo_t*);
   void cairo_set_line_join(cairo_t*, cairo_line_join_t);
   cairo_line_join_t cairo_get_line_join(cairo_t*);
@@ -383,7 +384,7 @@ ffi.cdef [[
                                                            double x,
                                                            double y);                                                         
   void                cairo_mask                          (cairo_t*,
-                                                           cairo_pattern_t *pattern);
+                                                           cairo_pattern_t*);
   void                cairo_mask_surface                  (cairo_t*,
                                                            cairo_surface_t*,
                                                            double surface_x,
@@ -466,20 +467,20 @@ ffi.cdef [[
                                                            double *y1,
                                                            double *x2,
                                                            double *y2);
-  void                cairo_pattern_add_color_stop_rgb    (cairo_pattern_t *pattern,
+  void                cairo_pattern_add_color_stop_rgb    (cairo_pattern_t*,
                                                            double offset,
                                                            double red,
                                                            double green,
                                                            double blue);
-  void                cairo_pattern_add_color_stop_rgba   (cairo_pattern_t *pattern,
+  void                cairo_pattern_add_color_stop_rgba   (cairo_pattern_t*,
                                                            double offset,
                                                            double red,
                                                            double green,
                                                            double blue,
                                                            double alpha);
-  cairo_status_t      cairo_pattern_get_color_stop_count  (cairo_pattern_t *pattern,
+  cairo_status_t      cairo_pattern_get_color_stop_count  (cairo_pattern_t*,
                                                            int *count);
-  cairo_status_t      cairo_pattern_get_color_stop_rgba   (cairo_pattern_t *pattern,
+  cairo_status_t      cairo_pattern_get_color_stop_rgba   (cairo_pattern_t*,
                                                            int index,
                                                            double *offset,
                                                            double *red,
@@ -493,19 +494,19 @@ ffi.cdef [[
                                                            double green,
                                                            double blue,
                                                            double alpha);
-  cairo_status_t      cairo_pattern_get_rgba              (cairo_pattern_t *pattern,
+  cairo_status_t      cairo_pattern_get_rgba              (cairo_pattern_t*,
                                                            double *red,
                                                            double *green,
                                                            double *blue,
                                                            double *alpha);
   cairo_pattern_t *   cairo_pattern_create_for_surface    (cairo_surface_t*);
-  cairo_status_t      cairo_pattern_get_surface           (cairo_pattern_t *pattern,
+  cairo_status_t      cairo_pattern_get_surface           (cairo_pattern_t*,
                                                            cairo_surface_t **surface);
   cairo_pattern_t *   cairo_pattern_create_linear         (double x0,
                                                            double y0,
                                                            double x1,
                                                            double y1);
-  cairo_status_t      cairo_pattern_get_linear_points     (cairo_pattern_t *pattern,
+  cairo_status_t      cairo_pattern_get_linear_points     (cairo_pattern_t*,
                                                            double *x0,
                                                            double *y0,
                                                            double *x1,
@@ -516,33 +517,33 @@ ffi.cdef [[
                                                            double cx1,
                                                            double cy1,
                                                            double radius1);
-  cairo_status_t      cairo_pattern_get_radial_circles    (cairo_pattern_t *pattern,
+  cairo_status_t      cairo_pattern_get_radial_circles    (cairo_pattern_t*,
                                                            double *x0,
                                                            double *y0,
                                                            double *r0,
                                                            double *x1,
                                                            double *y1,
                                                            double *r1);
-  cairo_pattern_t *   cairo_pattern_reference             (cairo_pattern_t *pattern);
-  void                cairo_pattern_destroy               (cairo_pattern_t *pattern);
-  cairo_status_t      cairo_pattern_status                (cairo_pattern_t *pattern);
-  void                cairo_pattern_set_extend            (cairo_pattern_t *pattern,
+  cairo_pattern_t *   cairo_pattern_reference             (cairo_pattern_t*);
+  void                cairo_pattern_destroy               (cairo_pattern_t*);
+  cairo_status_t      cairo_pattern_status                (cairo_pattern_t*);
+  void                cairo_pattern_set_extend            (cairo_pattern_t*,
                                                            cairo_extend_t extend);
-  cairo_extend_t      cairo_pattern_get_extend            (cairo_pattern_t *pattern);
-  void                cairo_pattern_set_filter            (cairo_pattern_t *pattern,
+  cairo_extend_t      cairo_pattern_get_extend            (cairo_pattern_t*);
+  void                cairo_pattern_set_filter            (cairo_pattern_t*,
                                                            cairo_filter_t filter);
-  cairo_filter_t      cairo_pattern_get_filter            (cairo_pattern_t *pattern);
-  void                cairo_pattern_set_matrix            (cairo_pattern_t *pattern,
+  cairo_filter_t      cairo_pattern_get_filter            (cairo_pattern_t*);
+  void                cairo_pattern_set_matrix            (cairo_pattern_t*,
                                                            const cairo_matrix_t *matrix);
-  void                cairo_pattern_get_matrix            (cairo_pattern_t *pattern,
+  void                cairo_pattern_get_matrix            (cairo_pattern_t*,
                                                            cairo_matrix_t *matrix);
-  cairo_pattern_type_t  cairo_pattern_get_type            (cairo_pattern_t *pattern);
-  unsigned int        cairo_pattern_get_reference_count   (cairo_pattern_t *pattern);
-  cairo_status_t      cairo_pattern_set_user_data         (cairo_pattern_t *pattern,
+  cairo_pattern_type_t cairo_pattern_get_type            (cairo_pattern_t*);
+  unsigned int        cairo_pattern_get_reference_count   (cairo_pattern_t*);
+  cairo_status_t      cairo_pattern_set_user_data         (cairo_pattern_t*,
                                                            const cairo_user_data_key_t *key,
                                                            void *user_data,
                                                            cairo_destroy_func_t destroy);
-  void *              cairo_pattern_get_user_data         (cairo_pattern_t *pattern,
+  void *              cairo_pattern_get_user_data         (cairo_pattern_t*,
                                                            const cairo_user_data_key_t *key);
   cairo_region_t *    cairo_region_create                 (void);
   cairo_region_t *    cairo_region_create_rectangle       (const cairo_rectangle_int_t *rectangle);
