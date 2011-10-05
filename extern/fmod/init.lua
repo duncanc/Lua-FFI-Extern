@@ -1447,4 +1447,9 @@ ffi.cdef [[
   FMOD_RESULT FMOD_Reverb_GetMemoryInfo          (FMOD_REVERB *reverb, unsigned int memorybits, unsigned int event_memorybits, unsigned int *memoryused, FMOD_MEMORY_USAGE_DETAILS *memoryused_details);
 ]]
 
-return ffi.load 'fmodex'
+if ffi.abi '64bit' then
+  return ffi.load 'fmodex64'
+else
+  return ffi.load 'fmodex'
+end
+
