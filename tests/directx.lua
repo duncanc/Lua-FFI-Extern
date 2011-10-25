@@ -1,6 +1,4 @@
 
-package.path = package.path .. ';?/init.lua'
-
 local ffi = require 'ffi'
 local com = require 'extern.mswindows.com'
 local ddraw = require 'extern.directx.ddraw'

@@ -1,6 +1,4 @@
 
-package.path = package.path .. ';./?/init.lua'
-
 local bit = require 'bit'
 local ffi = require 'ffi'
 local fmod = require 'extern.fmod'
