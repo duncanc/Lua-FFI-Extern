@@ -1,6 +1,26 @@
 
 local ffi = require 'ffi'
 
+if ffi.abi '64bit' then
+
+  ffi.cdef [[
+  
+    typedef __int64 LONG_PTR;
+    typedef unsigned __int64 UINT_PTR;
+    
+  ]]
+
+else
+
+  ffi.cdef [[
+  
+    typedef long LONG_PTR;
+    typedef unsigned int UINT_PTR;
+    
+  ]]
+
+end
+
 ffi.cdef [[
 
 	enum {
@@ -173,7 +193,9 @@ ffi.cdef [[
 		WM_COMMNOTIFY                   = 0x0044,
 		WM_WINDOWPOSCHANGING            = 0x0046,
 		WM_WINDOWPOSCHANGED             = 0x0047,
-		WM_POWER                        = 0x0048
+		WM_POWER                        = 0x0048,
+    
+    CW_USEDEFAULT = 0x80000000
 	};
 	typedef int32_t bool32;
 	typedef void* HANDLE;
@@ -198,7 +220,7 @@ ffi.cdef [[
 		char Buffer[1];
 	} RGNDATA;
 	typedef struct { uint8_t peRed, peGreen, peBlue, peFlags; } PALETTEENTRY;
-	typedef intptr_t (*WNDPROC)(HWND window, uint32_t message, uintptr_t wparam, uintptr_t lparam);
+  typedef LONG_PTR (__stdcall *WNDPROC)(void* hwnd, unsigned int message, UINT_PTR wparam, LONG_PTR lparam);
 	//typedef union LPCTSTR { const char* ansi; const wchar_t* unicode; } LPCTSTR;
 	typedef struct WNDCLASSEXA {
 		uint32_t cbSize, style;
@@ -239,13 +261,16 @@ ffi.cdef [[
 	HWND CreateWindowExA(uint32_t exstyle, const char* classname, const char* windowname, int32_t style,
 		int32_t x, int32_t y, int32_t width, int32_t height, HWND parent, HMENU menu, HINSTANCE instance, void* param);
 	bool32 ShowWindow(HWND window, int32_t command);
+  bool32 UpdateWindow(void* hwnd);
 	bool32 GetMessageA(MSG* out_msg, HWND hwnd, uint32_t filter_min, uint32_t filter_max);
 	bool32 TranslateMessage(const MSG* msg);
 	intptr_t DispatchMessageA(const MSG* msg);
 	HWND SetFocus(HWND window);
 	HWND GetActiveWindow();
 	HWND GetFocus();
+  uint32_t GetLastError();
 	int32_t GetWindowTextA(HWND, char* out_string, int32_t max_count);
+  void PostQuitMessage(int exitcode);
 	
 	typedef struct TEXTMETRICA {
 		int32_t tmHeight;
@@ -302,7 +327,9 @@ ffi.cdef [[
 		int multibyte_count,
 		const char* defaultChar,
 		bool32* out_usedDefaultChar);
-	
+  
+  void* GetModuleHandleA(const char* name);
+  
 ]]
 
 ffi.metatype('GUID', {
